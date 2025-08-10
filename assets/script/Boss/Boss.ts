@@ -12,6 +12,12 @@ export class Boss {
 
     constructor() {
         this.setState(ESTATEBOSS.IDLE)
+        this.CreateUi
+    }
+
+
+    CreateUi() {
+
     }
 
     idle() {
@@ -51,6 +57,11 @@ export class Boss {
                 this.walk()
                 break
         }
+    }
+
+
+    GetNode() {
+        return this.bossUI.node
     }
 }
 

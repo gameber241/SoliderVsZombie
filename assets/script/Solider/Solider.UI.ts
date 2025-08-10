@@ -10,6 +10,9 @@ export class Solider_UI extends Component {
     @property(SpriteFrameAnimator)
     animation: SpriteFrameAnimator = null;
 
+    @property(Node)
+    fire: Node = null
+
 
     PlayAnimation() {
         this.animation.PlayAnimation(this.attackRunAtlas, 0.05, true);
