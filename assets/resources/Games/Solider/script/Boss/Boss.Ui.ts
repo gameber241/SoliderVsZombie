@@ -43,6 +43,8 @@ export class Boss_Ui extends Component {
             if (this.hp == 0) {
                 this.node.destroy()
                 InGameManager.getInstance().PlayTurn()
+                InGameManager.getInstance().UpdateScore(GameConfig.SCORE_ENEMY)
+
             }
         }
 

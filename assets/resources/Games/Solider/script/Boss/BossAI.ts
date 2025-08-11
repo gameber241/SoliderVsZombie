@@ -44,6 +44,7 @@ export class BossAI extends Component {
             this._cooldownTimer -= dt;
             if (this._cooldownTimer <= 0) {
                 if (this.getDistanceToPlayer() <= this.attackRange) {
+                    if (this.isAttack == true) return
                     this.startAttack();
                 } else {
                     this.changeState(BossState.MOVE);
@@ -62,16 +63,19 @@ export class BossAI extends Component {
         Vec3.add(this._tempPos, bossPos, this._tempDir);
         this.node.setWorldPosition(this._tempPos);
     }
-
+    isAttack = false
     startAttack() {
+        this.isAttack = true
         this.changeState(BossState.ATTACK);
         this._cooldownTimer = this.attackCooldown;
         this.scheduleOnce(() => {
             if (this.getDistanceToPlayer() <= this.attackRange) {
                 this.dealDamage()
             }
-
-        }, this.bossUI.animationBoss.GetDuration() - 0.1)
+        }, this.bossUI.animationBoss.GetDuration() / 2)
+        this.scheduleOnce(() => {
+            this.isAttack = false
+        }, this.bossUI.animationBoss.GetDuration())
     }
 
     changeState(newState: BossState) {

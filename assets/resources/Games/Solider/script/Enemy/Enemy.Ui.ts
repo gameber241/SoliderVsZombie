@@ -2,6 +2,7 @@ import { _decorator, BoxCollider2D, CCInteger, Collider2D, Component, Contact2DT
 import { SpriteFrameAnimator } from '../Utils/SpriteFrameAnimator';
 import { ESTATEENEMY } from '../Enum/ESTATEENEMY';
 import { GameConfig } from '../Utils/GameConfig';
+import { InGameManager } from '../Manager/InGameManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Enemy_Ui')
@@ -38,6 +39,7 @@ export class Enemy_Ui extends Component {
             console.log(this.hp)
             if (this.hp == 0) {
                 this.enemy.stopShooting()
+                InGameManager.getInstance().UpdateScore(GameConfig.SCORE_ENEMY)
                 this.node.destroy()
 
             }

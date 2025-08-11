@@ -5,6 +5,8 @@ const { ccclass, property } = _decorator;
 export class GameConfig extends Component {
     public static HP_ENEMY = 10
     public static HP_BOSS = 100
+    public static SCORE_ENEMY = 10
+    public static SCORE_BOSS = 100
 }
 
 

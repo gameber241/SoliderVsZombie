@@ -1,4 +1,4 @@
-import { _decorator, Component, EventTouch, Node, tween, UIOpacity, UITransform, Vec3, Prefab, instantiate, math, BoxCollider2D } from 'cc';
+import { _decorator, Component, EventTouch, Node, tween, UIOpacity, UITransform, Vec3, Prefab, instantiate, math, BoxCollider2D, Label } from 'cc';
 import { BaseSingleton } from '../Base/BaseSingleton';
 import { ESOLIDER } from '../Enum/ESOLIDER';
 import { SoliderVsMonsterManager } from './SoliderVsMonsterManager';
@@ -6,6 +6,7 @@ import { Solider } from '../Solider/Solider';
 import { EENEMY } from '../Enum/EENEMY';
 import { PrefabManager } from './PrefabManager';
 import { DataEnemy } from '../Data/DataEnemy';
+import { BestScore } from '../UI/BestScore';
 const { ccclass, property } = _decorator;
 
 @ccclass('InGameManager')
@@ -25,12 +26,24 @@ export class InGameManager extends BaseSingleton<InGameManager> {
     @property(Node)
     posBossIns: Node = null
 
+    @property(Label)
+    scoreCurrent: Label = null
+
+    _scoreCurrent = 0
+
     idSolider: ESOLIDER = ESOLIDER.SOLIDER_0
     solider: Solider = null
 
     maxY = 250
     minY = -250
 
+    UpdateScore(scorePlus) {
+        this._scoreCurrent += scorePlus
+        if (this._scoreCurrent > BestScore.getInstance()._bestScore) {
+            BestScore.getInstance().SetLB(this._scoreCurrent)
+        }
+        this.scoreCurrent.string = "SCORE:" + this._scoreCurrent
+    }
 
     protected onEnable(): void {
         this.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
@@ -46,8 +59,8 @@ export class InGameManager extends BaseSingleton<InGameManager> {
         opacity.opacity = 0
         this.node.active = true
         tween(opacity).to(1, { opacity: 255 }).start()
-        // this.PlayTurn()
-        this.CreateBoss()
+        this.PlayTurn()
+        // this.CreateBoss()
     }
 
     SetIdSolider(id: ESOLIDER) {

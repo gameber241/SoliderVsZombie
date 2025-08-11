@@ -105,6 +105,7 @@ export class Enemy {
         const bullet = PoolManager.getInstance().Spawn(PrefabManager.getInstance().GetBulletPrefabById(BULEET_ID.Bullet_Enemy), InGameManager.getInstance().node)
         bullet.setWorldPosition(this.enemyUI.Fire.worldPosition.clone());
     }
+    
 }
 
 

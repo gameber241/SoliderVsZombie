@@ -111,8 +111,8 @@
     },
     "_lscale": {
       "__type__": "cc.Vec3",
-      "x": 4,
-      "y": 4,
+      "x": 1.3,
+      "y": 1.3,
       "z": 1
     },
     "_mobility": 0,
@@ -139,8 +139,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 123,
-      "height": 100
+      "width": 490,
+      "height": 400
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -176,7 +176,7 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "2d124834-63cf-414a-87ba-3c89e1439c4a@bb1a3",
+      "__uuid__": "ff2864c9-adb2-4c05-a91e-ff611bd9ce14@bb1a3",
       "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
@@ -192,7 +192,7 @@
     "_isTrimmedMode": false,
     "_useGrayscale": false,
     "_atlas": {
-      "__uuid__": "2d124834-63cf-414a-87ba-3c89e1439c4a",
+      "__uuid__": "ff2864c9-adb2-4c05-a91e-ff611bd9ce14",
       "__expectedType__": "cc.SpriteAtlas"
     },
     "_id": ""
@@ -272,20 +272,14 @@
     "__prefab": {
       "__id__": 13
     },
-    "idleAtlas": {
-      "__uuid__": "2d124834-63cf-414a-87ba-3c89e1439c4a",
-      "__expectedType__": "cc.SpriteAtlas"
-    },
-    "deadAtlas": {
-      "__uuid__": "37d54f15-d1ef-48bc-9604-ce3aab191edb",
-      "__expectedType__": "cc.SpriteAtlas"
-    },
+    "idleAtlas": null,
+    "deadAtlas": null,
     "attackAtlas": {
-      "__uuid__": "035ad99a-e259-456d-9cb5-73ed47d33b94",
+      "__uuid__": "06d1a4fc-0d99-4577-a7b2-406562f40bd9",
       "__expectedType__": "cc.SpriteAtlas"
     },
     "walkAtlas": {
-      "__uuid__": "6c126812-b1e2-4135-8456-b8b856194d9b",
+      "__uuid__": "ff2864c9-adb2-4c05-a91e-ff611bd9ce14",
       "__expectedType__": "cc.SpriteAtlas"
     },
     "animationBoss": {
