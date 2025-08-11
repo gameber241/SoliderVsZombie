@@ -1,5 +1,4 @@
 {
-  "__version__": "1.0.6",
   "general": {
     "designResolution": {
       "width": 1920,
@@ -7,35 +6,10 @@
       "fitHeight": true
     }
   },
-  "physics": {
-    "collisionGroups": [
-      {
-        "index": 2,
-        "name": "bulletSolider"
-      },
-      {
-        "index": 3,
-        "name": "enemy"
-      },
-      {
-        "index": 4,
-        "name": "BulletEnemy"
-      },
-      {
-        "index": 5,
-        "name": "Solider"
-      }
-    ],
-    "collisionMatrix": {
-      "0": 1,
-      "1": 0,
-      "2": 8,
-      "3": 4,
-      "4": 32,
-      "5": 16
+  "__version__": "1.0.4",
+  "fbx": {
+    "legacyFbxImporter": {
+      "visible": true
     }
-  },
-  "script": {
-    "preserveSymlinks": true
   }
 }

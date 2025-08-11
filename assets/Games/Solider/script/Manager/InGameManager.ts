@@ -30,6 +30,10 @@ export class InGameManager extends BaseSingleton<InGameManager> {
     @property(Label)
     scoreCurrent: Label = null
 
+    protected start(): void {
+        this.node.active = false
+    }
+
     _scoreCurrent = 0
 
     idSolider: ESOLIDER = ESOLIDER.SOLIDER_0
@@ -120,7 +124,7 @@ export class InGameManager extends BaseSingleton<InGameManager> {
     StartEnemyWave() {
         const rowCount = 5;
         const gapY = 120;
-        const startX = this.posStartEnemy.x;
+        const startX = this.posStartEnemy.position.x;
         const startY = 200;
 
         const SPECIAL_IDS = [
